@@ -6,10 +6,10 @@ const router=express.Router();
 
 router.use(verifyJWT);
 
-router.route('/').get();
-router.route('add').post();
-router.route('delete').delete();
-router.route('update').patch();
+// router.route('/').get();
+// router.route('add').post();
+// router.route('delete').delete();
+// router.route('update').patch();
 
 
 export default router

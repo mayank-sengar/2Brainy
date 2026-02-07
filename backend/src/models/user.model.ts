@@ -18,16 +18,9 @@ const userSchema =new mongoose.Schema({
     timestamps:true
 })
 
-userSchema.pre('save',async function(next :any){
-    try{
-        if(!this.isModified('password')) return next();
-        const hashedPassword = await bcrypt.hash(this.password, 10);
-        this.password = hashedPassword;
-        next();
-    }
-    catch(error){
-        next(error);
-    }
+userSchema.pre("save", async function (this: any) {
+  if (!this.isModified("password")) return;
+  this.password = await bcrypt.hash(this.password, 10);
 });
 
  userSchema.methods.isValidPassword = async function (password :string ){
