@@ -1,9 +1,9 @@
 import express from 'express';
-import dotenv from 'dotenv'
-import connectDB from './utils/db.ts'
-import authRoutes from './routes/auth.route.ts'
-import userRoutes from './routes/user.route.ts'
-import cookieParser from 'cookie-parser'
+import dotenv from 'dotenv';
+import authRoutes from './routes/auth.route';
+import userRoutes from './routes/user.route';
+import cookieParser from 'cookie-parser';
+import connectDB from './utils/db';
 const app = express();
 dotenv.config();
 
